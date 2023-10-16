@@ -1,6 +1,6 @@
 pipeline {
   agent { 
-    docker { image 'maven:3.8.1-adoptopenjdk-11' }
+    /usr/local/bin/docker { image 'maven:3.8.1-adoptopenjdk-11' }
   }
   options {
     buildDiscarder(logRotator(numToKeepStr: '5'))
@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'docker build -t darinpope/java-web-app:latest .'
+        sh '/usr/local/bin/docker build -t darinpope/java-web-app:latest .'
       }
     }
     stage('Scan') {
