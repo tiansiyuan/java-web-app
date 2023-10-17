@@ -11,7 +11,7 @@ pipeline {
     }
     stage('Scan') {
       steps {
-        sh 'trivy tiansiyuan/java-web-app:latest'
+        sh 'trivy image tiansiyuan/java-web-app:latest'
       }
     }
   }
